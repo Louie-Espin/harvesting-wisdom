@@ -16,6 +16,11 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ['var(--font-eb-garamond)'],
+        sans: ['var(--font-montserrat)'],
+        // mono: ['var(--font-montserrat)'] // FIXME: Currently using default tailwind mono.
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
