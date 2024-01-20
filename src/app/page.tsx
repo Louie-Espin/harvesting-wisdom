@@ -9,7 +9,7 @@ export default function Home() {
     <main className={clsx("flex min-h-screen flex-col items-center justify-between")}>
         <div className={clsx('p-4 pb-8 w-full max-w-6xl mx-4 min-[1320px]:mx-auto','bg-[#79C37B] rounded-lg')}>
             <div className='flex flex-col space-y-1.5 p-5'>
-                <h1 className="text-2xl font-semibold">
+                <h1 className="font-serif text-2xl font-semibold">
                     Episode 1 - Harvesting Wisdom Intro
                 </h1>
                 <p className='text-gray-100'>

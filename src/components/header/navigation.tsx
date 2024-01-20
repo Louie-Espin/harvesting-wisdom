@@ -30,7 +30,7 @@ export default function Navigation({ menu, ...rest }: NavigationProps & HTMLAttr
 function NavigationLink({path, active, children}: { path: string, active: boolean, children?: ReactNode }) {
     return (
         <Link href={path} className={
-            clsx('relative font-semibold tracking-wide text-3xl uppercase',
+            clsx('relative font-serif font-semibold tracking-wide text-2xl uppercase',
                 'after:block after:absolute after:-bottom-1 after:w-full after:h-0.5 after:bg-accent-foreground after:scale-x-0',
                 'transition-colors ease-in-out duration-200 delay-75 hover:text-accent-foreground',
                 'after:transition-transform after:ease-in-out after:duration-200 hover:after:scale-x-100',

@@ -10,6 +10,7 @@ const menu = [
     {title: 'episodes', path: '/episodes'},
     {title: 'partners', path: '/partners'},
     {title: 'credits', path: '/credits'},
+    {title: 'contact', path: '/contact'},
 ]
 
 export default async function Header() {
