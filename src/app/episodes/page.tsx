@@ -59,7 +59,7 @@ const episodes: EpisodeProps[] = [
 export default function EpisodesPage() {
 
     return (
-        <main className={clsx('min-h-screen w-full max-w-6xl mx-4 min-[1320px]:mx-auto')}>
+        <main className={clsx('min-h-screen w-full max-w-6xl px-4 min-[1320px]:mx-auto')}>
             <EpisodesFilter>
                 {episodes.sort((a, b) => b.number - a.number).map((episode) =>
                     <Episode key={episode.name} {...episode} />
