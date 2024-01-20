@@ -31,7 +31,7 @@ export default function Episode({ number, name, category, release, description }
         <div className={clsx('p-4 pb-8 w-full', 'bg-[#79C37B] rounded-lg')}>
             <div className='flex flex-col space-y-1.5 p-5'>
                 <h1 className="font-serif text-2xl font-semibold">
-                    {`Episode ${number} - ${name}`}
+                    {`Episode ${number} - ${category}: ${name}`}
                 </h1>
                 <div className='flex gap-2'>
                     <p className='text-gray-100'>{format(release, 'PP')}</p>
