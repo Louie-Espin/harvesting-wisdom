@@ -20,7 +20,7 @@ const credits = [
         bio: 'Dr. Roselle has been an active educator for over 20 years. His philosophy is to solve community based problems with community based solutions. Dr. Roselle consistently applies his experience, the knowledge acquired from his three advanced degrees in education to bring people together. Dr. Roselle currently serves as the Chair Person for the City of Phoenix’s Youth and Education Commission, the President of the Laveen Lions, the Executive Director of PBISAz, the Facilitator of the Laveen Community Action Committee, a founding member of the South Mountain Chamber of Commerce and a Chief Science Officers Coordinator.'
     },
     {
-        name: 'Kenan Jakupovich',
+        name: 'Kenan Jakupovic',
         image: kenanImg,
         bio: 'Meet Kenan Jakupovic, our Marketing and Communications Manager at Urban Farming Education (UFE). Currently pursuing a degree in Business & Analytics at ASU, Kenan\'s journey in the world of sustainable agriculture began with product research and development at Soil Seed & Water. His passion for cultivating change led him to Agave Environmental Contracting Inc, where he joined as a Marketing Associate. Transitioning from his role at Agave, Kenan now spearheads the marketing and communications efforts at UFE.'
     },
