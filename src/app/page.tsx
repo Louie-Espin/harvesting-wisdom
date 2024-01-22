@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import { clsx } from "clsx";
 import { Separator } from "@/components/ui/separator";
+import { redirect } from 'next/navigation'
 
 
 // FIXME: poor CSS, not semantic, should have cleaner padding. Refactor!
 export default function Home() {
+
+    redirect('/episodes'); // FIXME: TEMPORARY REDIRECT UNTIL HOME PAGE IS COMPLETED
+
   return (
     <main className={clsx("flex min-h-screen flex-col items-center justify-between")}>
         <div className={clsx('p-4 pb-8 w-full max-w-6xl mx-4 min-[1320px]:mx-auto','bg-[#79C37B] rounded-lg')}>
