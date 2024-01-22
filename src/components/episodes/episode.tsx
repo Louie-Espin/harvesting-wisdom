@@ -5,6 +5,7 @@ import { format } from "date-fns";
 
 import { useContext } from 'react';
 import { FilterContext } from "@/components/episodes/episodes-filter";
+import AudioPlaceholder from "@/components/episodes/audio-placeholder";
 
 export type EpisodeCategories =
     'Agricultural Innovators' |
@@ -58,12 +59,13 @@ export default function Episode({ number, name, category, release, description }
                 </div>
 
                 <div className="col-span-2 flex flex-col gap-6">
-                    <iframe style={{borderRadius: "12px"}}
-                            src="https://open.spotify.com/embed/episode/02aix9sqo6g2IDZkfZW9Zd?utm_source=generator&t=0"
-                            width="100%" height="152" frameBorder="0" allowFullScreen
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy">
-                    </iframe>
+                    {/*<iframe style={{borderRadius: "12px"}}*/}
+                    {/*        src="https://open.spotify.com/embed/episode/02aix9sqo6g2IDZkfZW9Zd?utm_source=generator&t=0"*/}
+                    {/*        width="100%" height="152" frameBorder="0" allowFullScreen*/}
+                    {/*        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"*/}
+                    {/*        loading="lazy">*/}
+                    {/*</iframe>*/}
+                    <AudioPlaceholder title={`Episode ${number} - ${category}: ${name}`} date={release} />
                     <div>
                         <h2 className='text-2xl mb-2'>Episode Description</h2>
                         <p>
