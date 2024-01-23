@@ -10,7 +10,7 @@ export default function AudioPlaceholder({ title, date }: { title: string, date:
         <div className={clsx('rounded-3xl p-3', 'bg-[#ACD4FB] h-[152px]')}>
             <div className='h-full grid grid-cols-[min-content_auto] gap-x-3'>
                 <div className={clsx(
-                    'h-[96px] w-[96px] bg-white rounded-3xl row-[1/span_2] self-center justify-self-center',
+                    'h-[96px] w-[96px] bg-white rounded-2xl row-[1/span_2] self-center justify-self-center',
                     'md:h-[120px] md:w-[120px] md:row-[1/span_3]',
                     'flex items-center'
                     )}>
