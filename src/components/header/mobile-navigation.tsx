@@ -1,6 +1,7 @@
 "use client";
 
 import { HTMLAttributes } from "react";
+import Link from 'next/link';
 import { Menu } from "lucide-react";
 import {
     Sheet,
@@ -22,11 +23,15 @@ export default function MobileNavigation ({ menu, ...rest }: NavigationProps & H
                 </SheetTrigger>
                 <SheetContent>
                     <SheetHeader>
-                        <SheetTitle>Are you absolutely sure?</SheetTitle>
-                        <SheetDescription>
-                            This action cannot be undone. This will permanently delete your account
-                            and remove your data from our servers.
-                        </SheetDescription>
+                        <ul className="flex flex-col gap-3 justify-evenly">
+                            {menu.map(({title, path}) =>
+                                <li key={title}>
+                                    <Link key={title} href={path} className='font-serif font-semibold text-2xl uppercase'>
+                                        {title}
+                                    </Link>
+                                </li>
+                            )}
+                        </ul>
                     </SheetHeader>
                 </SheetContent>
             </Sheet>
