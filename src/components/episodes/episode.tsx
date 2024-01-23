@@ -7,6 +7,9 @@ import { useContext } from 'react';
 import { FilterContext } from "@/components/episodes/episodes-filter";
 import AudioPlaceholder from "@/components/episodes/audio-placeholder";
 
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
+
 export type EpisodeCategories =
     'Agricultural Innovators' |
     'Academic Perspectives' |
@@ -19,42 +22,52 @@ export type EpisodeProps = {
     name: string
     category: EpisodeCategories
     release: Date
-    description: string
+    description: string,
+    thumb?: StaticImport, // FIXME: TEMPORARY
+    feature?: StaticImport[], // FIXME: TEMPORARY
 }
 
-export default function Episode({ number, name, category, release, description }: EpisodeProps) {
+export default function Episode({ number, name, category, release, description, thumb, feature }: EpisodeProps) {
 
     const { category: filteredCategory } = useContext(FilterContext);
 
     if (filteredCategory && filteredCategory !== category) return null;
 
     return (
-        <div className={clsx('p-4 pb-8 w-full', 'bg-[#79C37B] rounded-lg')}>
+        <div className={clsx('p-4 pb-8 w-full', 'bg-[#79C37B] rounded-3xl')}>
             <div className='flex flex-col space-y-1.5 p-5'>
-                <h1 className="font-serif text-2xl font-semibold">
+                <h1 className="font-serif text-3xl font-semibold">
                     {`Episode ${number} - ${category}: ${name}`}
                 </h1>
                 <div className='flex gap-2'>
                     <p className='text-gray-100'>{format(release, 'PP')}</p>
                     <p className='text-gray-100'>{`•`}</p>
-                    <p className='text-gray-100'>{`2 hr 21 min`}</p>
+                    <p className='text-gray-100'>{`Coming Soon!`}</p>
                 </div>
             </div>
-            <div className="px-4 grid gap-6 grid-cols-1 lg:grid-cols-3">
+            <div className="px-4 grid gap-y-6 grid-cols-1 lg:gap-x-6 lg:grid-cols-3">
                 <div className='flex flex-col gap-6'>
-                    <iframe width="100%" height="200" style={{borderRadius: "12px"}}
-                            src="https://www.youtube-nocookie.com/embed/B-LAPu1vFro?si=9jpgWHjjQm3ppykl"
-                            title="YouTube video player" frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen>
-                    </iframe>
+                    {thumb ?
+                        <Image src={thumb} alt='Episode thumbnail'
+                               className='w-full h-[200px] rounded-3xl overflow-hidden object-cover'
+                        />
+                        :
+                        <iframe width="100%" height="200" style={{borderRadius: "12px"}}
+                                src="https://www.youtube-nocookie.com/embed/B-LAPu1vFro?si=9jpgWHjjQm3ppykl"
+                                title="YouTube video player" frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen>
+                        </iframe>
+                    }
                     <div>
                         <h2 className='text-2xl mb-2'>Featuring</h2>
-                        <ul className="flex flex-row gap-3">
-                            <li className='block w-28 h-28 bg-[#ACD4FB] rounded-3xl'></li>
-                            <li className='block w-28 h-28 bg-[#ACD4FB] rounded-3xl'></li>
-                            <li className='block w-28 h-28 bg-[#ACD4FB] rounded-3xl'></li>
-                        </ul>
+                        <div className="flex flex-row gap-3">
+                            {feature?.map((feature, i) =>
+                                <Image key={i} src={feature} alt={'feature'}
+                                       className='w-28 h-28 rounded-3xl object-cover'
+                                />
+                            )}
+                        </div>
                     </div>
                 </div>
 
