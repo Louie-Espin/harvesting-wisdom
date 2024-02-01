@@ -31,15 +31,27 @@ export type EpisodeProps = {
     category: EpisodeCategories
     release: Date
     description: string,
+    tags: EpisodeTags[],
+    series: EpisodeSeries | null,
     thumb?: StaticImport, // FIXME: TEMPORARY
     feature?: StaticImport[], // FIXME: TEMPORARY
 }
 
-export default function Episode({ number, name, category, release, description, thumb, feature }: EpisodeProps) {
+export default function Episode({ number, name, category, release, description, tags, series, thumb, feature }: EpisodeProps) {
 
-    const { category: filteredCategory } = useContext(FilterContext);
+    const { category: categoryFilter, tags: tagsFilter, series: seriesFilter } = useContext(FilterContext);
 
-    if (filteredCategory && filteredCategory !== category) return null;
+    const checkTags = (filter: EpisodeTags[], tags: EpisodeTags[]): boolean => {
+        let match = false;
+        filter.forEach((value) => {
+            if (tags.includes(value)) match = true;
+        })
+        return match;
+    };
+
+    if (categoryFilter && categoryFilter !== category) return null;
+    if (seriesFilter && seriesFilter !== series) return null;
+    if ((tagsFilter.size > 0) && !checkTags([...tagsFilter], tags)) return null;
 
     return (
         <div className={clsx('p-4 pb-8 w-full', 'bg-[#79C37B] rounded-3xl')}>
