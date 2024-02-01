@@ -10,12 +10,20 @@ import AudioPlaceholder from "@/components/episodes/audio-placeholder";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
-export type EpisodeCategories =
-    'Agricultural Innovators' |
-    'Academic Perspectives' |
-    'Policy Shapers' |
-    'Education And Sustainability Allies' |
-    'Agency Insights'
+export const episodeCategories = [
+    'Agricultural Innovators', 'Academic Perspectives', 'Policy Shapers',
+    'Education And Sustainability Allies', 'Agency Insights'
+] as const;
+export const episodeTags = [
+    'Hemp', 'Farmer', 'K-12 Education', 'University Professor', 'Soil Scientists', 'State-Elected Official',
+    'County-Elected Official', 'Agriculture Businesses', 'Africa Partners', 'EcoTourism', 'STEM Garden',
+    'State Agency', 'Eco-Friendly Business'
+] as const;
+export const episodeSeries = [ 'Malawi', 'SRP' ] as const;
+
+export type EpisodeCategories = typeof episodeCategories[number];
+export type EpisodeTags = typeof episodeTags[number];
+export type EpisodeSeries = typeof episodeSeries[number];
 
 export type EpisodeProps = {
     number: number
