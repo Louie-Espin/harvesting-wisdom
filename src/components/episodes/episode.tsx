@@ -10,6 +10,8 @@ import AudioPlaceholder from "@/components/episodes/audio-placeholder";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
+import { Hash } from 'lucide-react';
+
 export const episodeCategories = [
     'Agricultural Innovators', 'Academic Perspectives', 'Policy Shapers',
     'Education And Sustainability Allies', 'Agency Insights'
@@ -104,6 +106,16 @@ export default function Episode({ number, name, category, release, description, 
                         <p>
                             {description} <span className='underline'>Read more.</span>
                         </p>
+                    </div>
+                    <div className='flex gap-3 flex-wrap justify-end mt-auto'>
+                        {series && <p className='text-sm'>{`Series: ${series}`}</p>}
+                        <ul className='bg-background px-3 rounded-3xl inline-flex gap-x-2 flex-wrap'>
+                            {tags.map((tag, idx) =>
+                                <li key={idx} className='inline-flex items-center text-sm text-nowrap'>
+                                    <Hash size='0.8rem'/>{tag}
+                                </li>
+                            )}
+                        </ul>
                     </div>
                 </div>
             </div>
