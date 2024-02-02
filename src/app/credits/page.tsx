@@ -4,6 +4,7 @@ import Image from "next/image";
 import mikeImg from '@public/temp/mike.jpg';
 import joeImg from '@public/temp/joe.jpeg';
 import kenanImg from '@public/temp/kenan.jpg';
+import rodolfoImg from '@public/temp/rodolfo.png';
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 const credits = [
@@ -23,6 +24,11 @@ const credits = [
         name: 'Kenan Jakupovic',
         image: kenanImg,
         bio: 'Meet Kenan Jakupovic, our Marketing and Communications Manager at Urban Farming Education (UFE). Currently pursuing a degree in Business & Analytics at ASU, Kenan\'s journey in the world of sustainable agriculture began with product research and development at Soil Seed & Water. His passion for cultivating change led him to Agave Environmental Contracting Inc, where he joined as a Marketing Associate. Transitioning from his role at Agave, Kenan now spearheads the marketing and communications efforts at UFE.'
+    },
+    {
+        name: 'Rodolfo Alvarez',
+        image: rodolfoImg,
+        bio: 'As the Director of Innovation at Soil Seed and Water, LLC, Rodolfo Alvarez excels in bridging aerospace engineering expertise with sustainable agricultural practices. He oversees product development, manages key technological integrations, and steers marketing strategies. Rodolfo\'s multifaceted role includes handling logistics, customer engagement, and leading initiatives for sustainable product innovations. His efforts are central to SSW\'s emergence as a leader in the organic soil sector, consistently introducing products that align with market demands and sustainability principles.'
     },
 ];
 
